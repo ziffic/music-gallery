@@ -1,29 +1,19 @@
 ﻿@{
-  Layout = null;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewBag.Title = "Music Detail";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width" />
-  <title>Music</title>
-</head>
-<body>
-  <div>
-    <h1>@ViewBag.BandName</h1>
-    <h2>@ViewBag.AlbumTitle</h2>
-    <h4>Release Date: @ViewBag.ReleaseDate</h4>
+<h1>@ViewBag.BandName</h1>
+<h2>@ViewBag.AlbumTitle</h2>
+<h4>Release Date: @ViewBag.ReleaseDate</h4>
 
-    <h3>Description:</h3>
-    @Html.Raw(ViewBag.Description)
+<h5>Description:</h5>
+@Html.Raw(ViewBag.Description)
 
-    <h3>Artists:</h3>
-    <ul>
-      @foreach (var artist in ViewBag.Artists)
-      {
-        <li>@artist</li>
-      }
-    </ul>
-  </div>
-</body>
-</html>
+<h5>Artists:</h5>
+<ul>
+  @foreach (var artist in ViewBag.Artists)
+  {
+    <li>@artist</li>
+  }
+</ul>
