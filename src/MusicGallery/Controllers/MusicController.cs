@@ -10,7 +10,7 @@ namespace MusicGallery.Controllers
   {
     public ActionResult Detail()
     {
-      return Content("Hello from the music controller! Today, it is " + DateTime.Now);
+      return View();
     }
   }
 }
