@@ -1,17 +1,5 @@
 ﻿@{
   Layout = null;
-
-  var bandName = "Tool";
-  var albumTitle = "Lateralus";
-  var releaseDate = "May 15, 2001";
-  var description = "<p>Lateralus is the third studio album by American rock band Tool. It was released through <strong>Volcano Entertainment</strong>.</p>";
-  var artists = new string[]
-  {
-    "Vocals: Maynard James Keenan",
-    "Guitar: Adam Jones",
-    "Bass: Justin Chancellor",
-    "Drums: Danny Carey"
-  };
 }
 
 <!DOCTYPE html>
@@ -22,16 +10,16 @@
 </head>
 <body>
   <div>
-    <h1>@bandName</h1>
-    <h2>@albumTitle</h2>
-    <h4>Release Date: @releaseDate</h4>
+    <h1>@ViewBag.BandName</h1>
+    <h2>@ViewBag.AlbumTitle</h2>
+    <h4>Release Date: @ViewBag.ReleaseDate</h4>
 
-    <h5>Description:</h5>
-    @Html.Raw(description)
+    <h3>Description:</h3>
+    @Html.Raw(ViewBag.Description)
 
-    <h5>Artists:</h5>
+    <h3>Artists:</h3>
     <ul>
-      @foreach (var artist in artists)
+      @foreach (var artist in ViewBag.Artists)
       {
         <li>@artist</li>
       }
