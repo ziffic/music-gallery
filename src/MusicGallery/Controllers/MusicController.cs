@@ -8,5 +8,9 @@ namespace MusicGallery.Controllers
 {
   public class MusicController : Controller
   {
+    public string Detail()
+    {
+      return "Hello from the music controller!";
+    }
   }
 }
