@@ -13,5 +13,21 @@ namespace MusicGallery.Models
     public string ReleaseDate { get; set; }
     public string DescriptionHtml { get; set; }
     public Artist[] Artists { get; set; }
+
+    public string DisplayText
+    {
+      get
+      {
+        return BandName + ": " + AlbumTitle;
+      }
+    }
+
+    public string CoverImageFileName
+    {
+      get
+      {
+        return BandName.Replace(" ", "-").ToLower() + AlbumTitle.Replace(" ", "-") + ".jpg";
+      }
+    }
   }
 }
