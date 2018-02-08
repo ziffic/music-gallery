@@ -8,9 +8,9 @@ namespace MusicGallery.Controllers
 {
   public class MusicController : Controller
   {
-    public string Detail()
+    public ActionResult Detail()
     {
-      return "Hello from the music controller!";
+      return Content("Hello from the music controller! Today, it is " + DateTime.Now);
     }
   }
 }
