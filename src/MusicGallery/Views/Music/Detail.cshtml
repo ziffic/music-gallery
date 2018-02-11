@@ -1,19 +1,21 @@
-﻿@{
+﻿@model MusicGallery.Models.Music
+
+@{
   Layout = "~/Views/Shared/_Layout.cshtml";
-  ViewBag.Title = "Music Detail";
+  ViewBag.Title = Model.DisplayText;
 }
 
-<h1>@ViewBag.BandName</h1>
-<h2>@ViewBag.AlbumTitle</h2>
-<h4>Release Date: @ViewBag.ReleaseDate</h4>
+<h1>@Model.BandName</h1>
+<h2>@Model.AlbumTitle</h2>
+<h4>Release Date: @Model.ReleaseDate</h4>
 
 <h5>Description:</h5>
-@Html.Raw(ViewBag.Description)
+@Html.Raw(Model.DescriptionHtml)
 
 <h5>Artists:</h5>
 <ul>
-  @foreach (var artist in ViewBag.Artists)
+  @foreach (var artist in Model.Artists)
   {
-    <li>@artist</li>
+    <li>@artist.Name - @artist.Role</li>
   }
 </ul>
