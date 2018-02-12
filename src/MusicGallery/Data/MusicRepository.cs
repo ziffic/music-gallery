@@ -12,6 +12,7 @@ namespace MusicGallery.Data
     {
       new Music()
       {
+        Id = 1,
         BandName = "Tool",
         AlbumTitle = "Lateralus",
         ReleaseDate = "May 15, 2001",
@@ -27,6 +28,7 @@ namespace MusicGallery.Data
 
       new Music()
       {
+        Id = 2,
         BandName = "Tool",
         AlbumTitle = "10000 Days",
         ReleaseDate = "April 28, 2006",
