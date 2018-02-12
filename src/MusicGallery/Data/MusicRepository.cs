@@ -41,7 +41,12 @@ namespace MusicGallery.Data
           new Artist() { Name = "Danny Carey", Role = "Drums" }
         }
       }
-  };
+    };
+
+    public Music[] GetMusic()
+    {
+      return _music;
+    }
 
     public Music GetMusic(int id)
     {

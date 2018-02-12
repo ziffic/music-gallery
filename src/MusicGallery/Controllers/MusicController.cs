@@ -17,6 +17,13 @@ namespace MusicGallery.Controllers
       _musicRepository = new MusicRepository();
     }
 
+    public ActionResult Index()
+    {
+      var music = _musicRepository.GetMusic();
+
+      return View(music);
+    }
+
     public ActionResult Detail(int? id)
     {
       if (id == null)
