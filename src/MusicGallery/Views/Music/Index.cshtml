@@ -10,8 +10,10 @@
   @foreach (var music in Model)
   {
     <div class="col-md-3">
-      <h4>@music.DisplayText</h4>
-      <img src="/Images/@music.CoverImageFileName" alt="@music.DisplayText" class="img-responsive" />
+      <h4>@Html.ActionLink(music.DisplayText, "Detail", new { id = music.Id })</h4>
+      <a href="@Url.Action("Detail", new { id = music.Id } )">
+        <img src="/Images/@music.CoverImageFileName" alt="@music.DisplayText" class="img-responsive" />
+      </a>
     </div>
   }
 </div>
