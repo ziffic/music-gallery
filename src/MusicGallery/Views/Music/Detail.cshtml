@@ -5,17 +5,31 @@
   ViewBag.Title = Model.DisplayText;
 }
 
-<h1>@Model.BandName</h1>
-<h2>@Model.AlbumTitle</h2>
-<h4>Release Date: @Model.ReleaseDate</h4>
+<h2>@Model.DisplayText</h2>
 
-<h5>Description:</h5>
-@Html.Raw(Model.DescriptionHtml)
+<div class="row">
+  <div class="col-md-6">
+    <div class="well">
+      <h5><label>Band:</label> @Model.BandName</h5>
+      <h5><label>Album:</label> @Model.AlbumTitle</h5>
+      <h5><label>Release Date:</label> @Model.ReleaseDate</h5>
 
-<h5>Artists:</h5>
-<ul>
-  @foreach (var artist in Model.Artists)
-  {
-    <li>@artist.Name - @artist.Role</li>
-  }
-</ul>
+      <h2>@Model.CoverImageFileName</h2>
+
+      <h5>Band Members:</h5>
+      <div>
+        <ul>
+          @foreach (var artist in Model.Artists)
+          {
+            <li>@artist.Name - @artist.Role</li>
+          }
+        </ul>
+      </div>
+    </div>
+    <h5>Description</h5>
+    @Html.Raw(Model.DescriptionHtml)
+  </div>
+  <div class="col-md-6">
+    <img src="~/Images/@Model.CoverImageFileName" alt="@Model.DisplayText" class="img-responsive" />
+  </div>
+</div>

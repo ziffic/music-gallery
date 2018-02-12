@@ -26,7 +26,7 @@ namespace MusicGallery.Models
     {
       get
       {
-        return BandName.Replace(" ", "-").ToLower() + AlbumTitle.Replace(" ", "-") + ".jpg";
+        return BandName.Replace(" ", "-").ToLower() + "-" + AlbumTitle.Replace(" ", "-").ToLower() + ".jpg";
       }
     }
   }
